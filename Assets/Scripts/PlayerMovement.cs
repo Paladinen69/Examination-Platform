@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         rbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, rbody.velocity.y); //våran rigidbodys hastighet (velocity) = En Vector2 (x, y) där när man trycker ner en Horizontal knapp (A, D och vänsterhöger pilarna) så flyttas karaktärens X värde multipliceras med movespeed. Medans y är densamma (rbody.velocity.y)
-        if (Input.GetButtonDown("Jump")) //om en Jump knapp trycks ner (Space)
+        if (Input.GetButtonDown("Jump")) //om en Jump knapp trycks ner (Space). Jag har gjort hitboxen tillräckligt stor så att man kan "walljumpa", hoppa på väggar
         {
             if (groundCheck.isGrounded > 0) //om GroundChecker (en collider) nuddar en annan collider
             {

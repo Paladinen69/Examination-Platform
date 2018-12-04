@@ -9,9 +9,9 @@ public class Coin : MonoBehaviour
     //hur mycket ett mynt är värt.
     public int amount = 1;
     //variabel för myntens rotation
-    private float spinSpeed = 180;
+    public float spinSpeed = 180;
 
-    private void Update()
+    private void Update() //händer varje frame.
     {
         transform.Rotate(0, spinSpeed * Time.deltaTime, 0); //myntet roterar konstant
         
