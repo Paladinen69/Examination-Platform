@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour
+public class YellowKey : MonoBehaviour
 {
 
-    public static bool keyIsTaken; //Variabel för om nyckeln är tagen eller inte. static betyder att man kan hämta variablen till andra scrips
+    public static bool yellowKeyIsTaken; //Variabel för om nyckeln är tagen eller inte. static betyder att man kan hämta variablen till andra scrips
     
     // Use this for initialization
 
@@ -17,7 +17,7 @@ public class Key : MonoBehaviour
     
     void Start()
     {
-        Key.keyIsTaken = false; //i början är keyIsTaken false eftersom nyckeln inte är tagen.
+        YellowKey.yellowKeyIsTaken = false; //i början är keyIsTaken false eftersom nyckeln inte är tagen.
     }
   
     private void OnTriggerEnter2D(Collider2D collision) // när nyckeln nuddar något, nyckeln är en Is Trigger
@@ -25,7 +25,7 @@ public class Key : MonoBehaviour
         if (collision.tag == "Player") //om nyckeln nuddar något med taggen "Player", i detta fall våran player som vi styr.
         {
             Destroy(gameObject); //nyckeln försvinner
-            Key.keyIsTaken = true; //keyIsTaken blir true, sant.
+            YellowKey.yellowKeyIsTaken = true; //keyIsTaken blir true, sant.
         }
     }
 
